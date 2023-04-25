@@ -1,13 +1,14 @@
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) --open vim Explorer
 
+--move selected code in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "J", "mzJ`z") --append next line
+vim.keymap.set("n", "<C-d>", "<C-d>zz") --half page down
+vim.keymap.set("n", "<C-u>", "<C-u>zz") --half page up
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -30,7 +31,9 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+--disable whatever that does
 vim.keymap.set("n", "Q", "<nop>")
+
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
