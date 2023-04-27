@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
 	use('OmniSharp/omnisharp-vim')
+    use('mhinz/vim-signify')
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
