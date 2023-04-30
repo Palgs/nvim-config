@@ -22,33 +22,51 @@ return require('packer').startup(function(use)
     use('nvim-lualine/lualine.nvim')
 
     use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
+        'folke/tokyonight.nvim',
+        as = 'tokyonight',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            vim.cmd('colorscheme tokyonight')
         end})
 
-        use('ThePrimeagen/harpoon')
-        use('mbbill/undotree')
-        use('tpope/vim-fugitive')
-        use {
-            'VonHeikemen/lsp-zero.nvim',
-            branch = 'v2.x',
-            requires = {
-                -- LSP Support
-                {'neovim/nvim-lspconfig'},             -- Required
-                {                                      -- Optional
-                'williamboman/mason.nvim',
-                run = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-            },
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+        use({
+            'rose-pine/neovim',
+            as = 'rose-pine',
+            config = function()
+                vim.cmd('colorscheme rose-pine')
+            end})
 
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},     -- Required
-            {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
-        }}
+            use('ThePrimeagen/harpoon')
+            use('ThePrimeagen/vim-be-good')
+            use('mbbill/undotree')
+            use('tpope/vim-fugitive')
+            use('OmniSharp/omnisharp-vim')
 
-    end)
+            use('mhinz/vim-signify')
+            use {
+                'VonHeikemen/lsp-zero.nvim',
+                branch = 'v2.x',
+                requires = {
+                    -- LSP Support
+                    {'neovim/nvim-lspconfig'},             -- Required
+                    {                                      -- Optional
+                    'williamboman/mason.nvim',
+                    run = function()
+                        pcall(vim.cmd, 'MasonUpdate')
+                    end,
+                },
+                {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+                -- Autocompletion
+                {'hrsh7th/nvim-cmp'},     -- Required
+                {'hrsh7th/cmp-nvim-lsp'}, -- Required
+                {'hrsh7th/cmp-nvim-lua'},
+                {'hrsh7th/cmp-buffer'},
+                {'hrsh7th/cmp-path'},
+                {'saadparwaiz1/cmp_LuaSnip'},
+
+                -- Snippets
+                {'L3MON4D3/LuaSnip'},     -- Required
+                {'rafamadriz/friendly-snippets'}, 
+            }}
+
+        end)
