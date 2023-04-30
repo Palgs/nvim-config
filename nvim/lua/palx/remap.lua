@@ -1,6 +1,5 @@
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", ':Telescope file_browser path=%:p:h select_buffer=true hidden=true<CR>') --open vim Explorer
 
 --move selected code in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

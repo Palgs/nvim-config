@@ -20,14 +20,14 @@ return require('packer').startup(function(use)
     }
 
     use('nvim-lualine/lualine.nvim')
-
+--[[
     use({
         'folke/tokyonight.nvim',
         as = 'tokyonight',
         config = function()
             vim.cmd('colorscheme tokyonight')
         end})
-
+        ]]
         use({
             'rose-pine/neovim',
             as = 'rose-pine',
