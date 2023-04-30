@@ -19,6 +19,8 @@ return require('packer').startup(function(use)
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" , "nvim-tree/nvim-web-devicons"}
     }
 
+    use('nvim-lualine/lualine.nvim')
+
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
