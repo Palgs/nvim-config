@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\jojo-\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "C:\\Users\\jojo-\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "C:\\Users\\jojo-\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
