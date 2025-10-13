@@ -1,5 +1,5 @@
 #Import-Module posh-git
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\palgs_theme.yaml" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:LOCALAPPDATA\oh-my-posh\themes\palgs_theme.yaml" | Invoke-Expression
 
 Import-Module -Name Terminal-Icons
 

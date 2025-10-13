@@ -1,113 +1,112 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 
-$schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 console_title_template: "{{ .Shell }} -> {{ .Folder }}"
-console_title_style: "template"
-console_title: true
-final_space: true
-version: 2.0
 blocks:
-
   - type: prompt
     alignment: left
-    newline: false
     segments:
-
-      - type: text
-        style: plain
-        foreground: "#bdb2ff"
+      - properties:
+          cache_duration: none
         template: ╭─
-
-      - type: path
-        background: "#bdb2ff"
-        foreground: "#000000"
-        style: diamond
-        leading_diamond: "\ue0c7"
-        trailing_diamond: "\ue0c6"
-        properties:
+        foreground: "#bdb2ff"
+        type: text
+        style: plain
+      - properties:
+          cache_duration: none
+          folder_icon: 󰝰
+          folder_separator_icon: "<transparent> 󰿟 </>"
+          home_icon: 
           style: agnoster
-          home_icon: "\uf7db"
-          folder_separator_icon: "<transparent> \ue0bd </>"
-          folder_icon: "\uf6d7"
+        leading_diamond: 
+        trailing_diamond: 
         template: " {{ path .Path .Location }} "
-
+        foreground: "#000000"
+        background: "#bdb2ff"
+        type: path
+        style: diamond
   - type: prompt
     alignment: right
     segments:
-      - type: executiontime
-        background: "#fec868"
-        foreground: "#000000"
-        style: diamond
-        leading_diamond: "\ue0c7"
-        trailing_diamond: "\ue0c6"
-        properties:
-          style: "austin"
-          threshold: 0
+      - properties:
           always_enabled: true
-        template : " {{ .FormattedMs }} "
-
-      - type: sysinfo
-        style: diamond
-        leading_diamond: "\ue0c7"
-        trailing_diamond: "\ue0c6"
-        background: "#dffdff"
+          cache_duration: none
+          style: austin
+          threshold: 0
+        leading_diamond: 
+        trailing_diamond: 
+        template: "  {{ .FormattedMs }} "
         foreground: "#000000"
-        properties:
+        background: "#fec868"
+        type: executiontime
+        style: diamond
+      - properties:
+          cache_duration: none
           precision: 1
-        template: " {{ round .PhysicalPercentUsed .Precision }}% "
-
-      - type: time
-        background: "#fad1fa"
+        leading_diamond: 
+        trailing_diamond: 
+        template: " 󰍛 {{ round .PhysicalPercentUsed .Precision }}% "
         foreground: "#000000"
+        background: "#dffdff"
+        type: sysinfo
         style: diamond
-        leading_diamond: "\ue0c7"
-        trailing_diamond: "\ue0c6"
-        properties:
-          time_format: "Jan 2 15:04"
+      - properties:
+          cache_duration: none
+          time_format: Jan 2 15:04
+        leading_diamond: 
+        trailing_diamond: 
         template: " ♥ {{ .CurrentDate | date .Format }} "
-
+        foreground: "#000000"
+        background: "#fad1fa"
+        type: time
+        style: diamond
   - type: prompt
     alignment: left
-    newline: true
     segments:
-
-      - type: text
-        style: plain
-        foreground: "#bdb2ff"
+      - properties:
+          cache_duration: none
         template: "{{ if or .Segments.Git .Segments.Dotnet .Segments.Rust  }}│ {{ end }}"
-
-      - type: git
         foreground: "#bdb2ff"
-        style: diamond
-        properties:
+        type: text
+        style: plain
+      - properties:
+          branch_icon: " "
+          cache_duration: none
+          fetch_bare_info: true
           fetch_stash_count: true
           fetch_status: true
           fetch_upstream_icon: true
-          fetch_bare_info: true
-          branch_icon: "\ue725 "
-        template: "[ {{ .UpstreamIcon }}{{ .HEAD }} {{ if or .Working.Changed .Staging.Changed}}[{{ if .Working.Changed }} {{ if gt .Working.Added 0 }}<#aafbdc>\uea60{{ .Working.Added }}</>{{ end }}{{ if gt .Working.Modified 0 }}<#fac898>\uf040{{ .Working.Modified }}</>{{ end }}{{ if gt .Working.Untracked 0 }}<#808080>\ueb32{{ .Working.Untracked }}</>{{ end }}{{ if gt .Working.Deleted 0 }}<#ff6961>\uea81{{ .Working.Deleted }}</>{{ end }} {{ end }}] \uea9c [{{ if .Staging.Changed }} {{ if gt .Staging.Added 0 }}<#aafbdc>\uea60{{ .Staging.Added }}</>{{ end }}{{ if gt .Staging.Modified 0 }}<#fac898>\uf040{{ .Staging.Modified }}</>{{ end }}{{ if gt .Staging.Untracked 0 }}<#808080>\ueb32{{ .Staging.Untracked }}</>{{ end }}{{ if gt .Staging.Deleted 0 }}<#ff6961>\uea81{{ .Staging.Deleted }}</>{{ end }} {{ end }}] {{ end }}]"
-
-      - type: dotnet
+        template: "[ {{ .UpstreamIcon }}{{ .HEAD }} {{ if or .Working.Changed .Staging.Changed}}[{{ if .Working.Changed }} {{ if gt .Working.Added 0 }}<#aafbdc>{{ .Working.Added }}</>{{ end }}{{ if gt .Working.Modified 0 }}<#fac898>{{ .Working.Modified }}</>{{ end }}{{ if gt .Working.Untracked 0 }}<#808080>{{ .Working.Untracked }}</>{{ end }}{{ if gt .Working.Deleted 0 }}<#ff6961>{{ .Working.Deleted }}</>{{ end }} {{ end }}]  [{{ if .Staging.Changed }} {{ if gt .Staging.Added 0 }}<#aafbdc>{{ .Staging.Added }}</>{{ end }}{{ if gt .Staging.Modified 0 }}<#fac898>{{ .Staging.Modified }}</>{{ end }}{{ if gt .Staging.Untracked 0 }}<#808080>{{ .Staging.Untracked }}</>{{ end }}{{ if gt .Staging.Deleted 0 }}<#ff6961>{{ .Staging.Deleted }}</>{{ end }} {{ end }}] {{ end }}]"
+        foreground: "#bdb2ff"
+        type: git
         style: diamond
+      - properties:
+          cache_duration: none
+        template: "[  {{ .Full }} ]"
         foreground: "#b84eff"
-        template: "[ \ue77f {{ .Full }} ]"
-
-      - type: rust
+        type: dotnet
         style: diamond
+      - properties:
+          cache_duration: none
+        template: "[  {{ .Full }} ]"
         foreground: "#E33C26"
-        template: "[ \ue7a8 {{ .Full }} ]"
-
-  - type: prompt 
-    alignment: left 
-    newline: true 
-    segments: 
-
-    - type: text
-      style: plain
-      foreground: "#bdb2ff"
-      template: ╰─
-
-    - type: text 
-      style: plain 
-      foreground: "#bdb2ff"
-      template: "\u276f"
+        type: rust
+        style: diamond
+    newline: true
+  - type: prompt
+    alignment: left
+    segments:
+      - properties:
+          cache_duration: none
+        template: ╰─
+        foreground: "#bdb2ff"
+        type: text
+        style: plain
+      - properties:
+          cache_duration: none
+        template: ❯
+        foreground: "#bdb2ff"
+        type: text
+        style: plain
+    newline: true
+version: 3
+final_space: true

@@ -7,16 +7,16 @@ $mappings = @(
 #	    source = "$Env:USERPROFILE\.ideavimrc"
 #	    dest = "$PWD\IdeaVim\.ideavimrc"
 #   },
+    # @{
+	#     source = "$Env:LOCALAPPDATA\nvim"
+	#     dest = "$PWD\nvim"
+    # }
+    # @{
+    #    source = "$Env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\"
+    #    dest = "$PWD\WindowsTerminal"
+    # },
     @{
-	    source = "$Env:LOCALAPPDATA\nvim"
-	    dest = "$PWD\nvim"
-    }
-    #@{
-     #   source = "$Env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\"
-     #   dest = "$PWD\WindowsTerminal"
-    #},
-    @{
-        source ="$Env:LOCALAPPDATA\Programs\oh-my-posh\themes\palgs_theme.yaml"
+        source ="$Env:LOCALAPPDATA\oh-my-posh\themes\palgs_theme.yaml"
         dest = "$PWD\OhMyPosh\palgs_theme.yaml"
     }
 )
@@ -34,4 +34,4 @@ foreach ($mapping in $mappings) {
 }
 
 echo ". `"$PWD\Powershell\profile.ps1`"" > $Env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
-echo ". `"$PWD\Powershell\profile.ps1`"" > $Env:USERPROFILE\Documents\WindowsPowerShell\profile.ps1
+#echo ". `"$PWD\Powershell\profile.ps1`"" > $Env:USERPROFILE\Documents\WindowsPowerShell\profile.ps1
