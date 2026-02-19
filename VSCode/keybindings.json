@@ -55,17 +55,54 @@
     "key": "d",
     "when": "filesExplorerFocus && !inputFocus"
   },
+  // DEBUG
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+d"
+  },
+  {
+    "command": "workbench.view.debug",
+    "key": "ctrl+d",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "workbench.view.debug",
+    "key": "ctrl+shift+d"
+  },
+  // GIT
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+g"
+  },
+  {
+    "command": "workbench.view.scm",
+    "key": "ctrl+g",
+    "when": "editorTextFocus"
+  },
+  // TESTING VIEW
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+t"
+  },
+  {
+    "command": "workbench.view.testing.open",
+    "key": "ctrl+t",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "workbench.view.testing.open",
+    "key": "ctrl+shift+t"
+  },
   // EXTENSIONS
   {
     "command": "workbench.action.toggleSidebarVisibility",
     "key": "ctrl+x"
   },
   {
-    "command": "workbench.extensions.action.focusExtensionsView",
+    "command": "workbench.view.extensions",
     "key": "ctrl+x",
     "when": "editorTextFocus"
   },
-
   // EXTRA
   {
     "key": "ctrl+shift+5",
