@@ -13,6 +13,7 @@
   "update.showReleaseNotes": false,
   "zenMode.hideLineNumbers": false,
   "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 15,
 
   "vim.leader": "<Space>",
   "vim.hlsearch": true,
